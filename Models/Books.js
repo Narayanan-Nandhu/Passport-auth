@@ -1,20 +1,17 @@
 const { DataTypes} = require('sequelize');
+const { sequelize} = require('../services/database')
 
-const { connectDatabase, sequelize} = require('../services/database')
 
-
-// connectDatabase();
-
-const User = sequelize.define('User', {
-    username: {
+const Book = sequelize.define('Book', {
+    title: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    email: {
+    author: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    password: {
+    category: {
         type: DataTypes.STRING,
         allowNull: false
     }
@@ -25,5 +22,5 @@ const User = sequelize.define('User', {
   })()
 
 module.exports = {
-    User
+    Book
 }
